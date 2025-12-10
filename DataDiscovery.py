@@ -16,7 +16,7 @@ def load_filter_impute_data(file_path):
     df = pd.read_csv(file_path)
     # print(df.describe())
     # print(df.isna().sum())
-    print(df.info())
+    # print(df.info())
     # Fill empty values with NaN and drop hotels with missing review_scores
     df["review_score"] = df["review_score"].replace(r"^\s*$", np.nan, regex=True)
     df.loc[df["review_score"] < 0, "review_score"] = np.nan

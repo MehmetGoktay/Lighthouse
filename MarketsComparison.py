@@ -21,10 +21,10 @@ hotels_raw["country"] = hotels_raw["latitude"].apply(assign_country)
 # Keep only columns needed for merging
 hotels = hotels_raw[["our_hotel_id", "country"]]
 
-# 3. Merge hotel metadata into bookings dataset
+# Merge hotel metadata into bookings dataset
 df = bookings.merge(hotels, on="our_hotel_id")
 
-# 4. Compute daily hotel availability per market
+# Compute daily hotel availability per market
 availability = (
     df[df["is_sold_out"] == False]
     .groupby(["arrival_date", "country"])["our_hotel_id"]
