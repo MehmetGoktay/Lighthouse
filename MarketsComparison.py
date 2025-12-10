@@ -9,11 +9,11 @@ import seaborn as sns
 ############################ How many hotels are available per day per market? #############################
 
 # Loading pricing info
-bookings = pd.read_csv('/Users/nurkaraca/Desktop/Projects/Project-LH/pricing_data.csv')
+bookings = pd.read_csv('/Users/megoktay/Desktop/Projects/Project-LH/pricing_data.csv')
 bookings["arrival_date"] = pd.to_datetime(bookings["arrival_date"])
 
 # Load hotel info
-hotels_raw = pd.read_csv('/Users/nurkaraca/Desktop/Projects/Project-LH/hotels_information.csv')
+hotels_raw = pd.read_csv('/Users/megoktay/Desktop/Projects/Project-LH/hotels_information.csv')
 
 # Assign each hotel to Belgium or the Netherlands
 hotels_raw["country"] = hotels_raw["latitude"].apply(assign_country)
@@ -77,8 +77,8 @@ def clean_pricing(df):
 
     return df
 
-df_hotels = load_filter_impute_data('/Users/nurkaraca/Desktop/Projects/Project-LH/hotels_information.csv')
-df_bookings = pd.read_csv('/Users/nurkaraca/Desktop/Projects/Project-LH/pricing_data.csv')
+df_hotels = load_filter_impute_data('/Users/megoktay/Desktop/Projects/Project-LH/hotels_information.csv')
+df_bookings = pd.read_csv('/Users/megoktay/Desktop/Projects/Project-LH/pricing_data.csv')
 
 df_bookings = clean_pricing(df_bookings)
 

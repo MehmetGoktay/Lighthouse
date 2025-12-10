@@ -78,7 +78,7 @@ def plot_pca(dataframe):
 
 if __name__ == "__main__":
     # Load the data, perform data cleaning and imputation
-    df_hotels = load_filter_impute_data('/Users/nurkaraca/Desktop/Projects/Project-LH/hotels_information.csv')
+    df_hotels = load_filter_impute_data('/Users/megoktay/Desktop/Projects/Project-LH/hotels_information.csv')
 
     # Create two dataframes for Belgium and The Netherlands
     belgium_hotels = df_hotels[df_hotels["country"] == "Belgium"]
